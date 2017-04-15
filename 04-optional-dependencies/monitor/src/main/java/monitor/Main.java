@@ -57,11 +57,17 @@ public class Main {
 	}
 
 	private static Optional<ServiceObserver> createAlphaObserver(String serviceName) {
-		return AlphaServiceObserver.createIfAlphaService(serviceName);
+		if (ModuleUtils.isModulePresent("monitor.observer.alpha"))
+			return AlphaServiceObserver.createIfAlphaService(serviceName);
+		else
+			return Optional.empty();
 	}
 
 	private static Optional<ServiceObserver> createBetaObserver(String serviceName) {
-		return BetaServiceObserver.createIfBetaService(serviceName);
+		if (ModuleUtils.isModulePresent("monitor.observer.beta"))
+			return BetaServiceObserver.createIfBetaService(serviceName);
+		else
+			return Optional.empty();
 	}
 
 	private static <T> Supplier<Optional<T>> printfIfEmpty(String message, String... args) {

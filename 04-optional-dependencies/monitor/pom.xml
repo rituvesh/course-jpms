@@ -24,11 +24,13 @@
 			<groupId>monitor</groupId>
 			<artifactId>observer.alpha</artifactId>
 			<version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>monitor</groupId>
 			<artifactId>observer.beta</artifactId>
 			<version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>monitor</groupId>
