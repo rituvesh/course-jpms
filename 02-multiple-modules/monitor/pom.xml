@@ -65,8 +65,9 @@
 					<executable>${java.executable}</executable>
 					<workingDirectory>.</workingDirectory>
 					<arguments>
-						<argument>--class-path</argument><classpath/>
-						<argument>monitor.Main</argument>
+						<argument>--module-path</argument><modulepath/>
+						<argument>--module</argument>
+						<argument>monitor/monitor.Main</argument>
 					</arguments>
 				</configuration>
 			</plugin>
