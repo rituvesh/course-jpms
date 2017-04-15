@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -37,8 +38,9 @@ public class Main {
 	}
 
 	private static Monitor createMonitor() {
-		List<ServiceObserver> observers = Stream.of("alpha-1", "alpha-2", "alpha-3")
+		List<ServiceObserver> observers = Stream.of("alpha-1", "alpha-2", "alpha-3", "beta-1")
 				.map(Main::createAlphaObserver)
+				.flatMap(Optional::stream)
 				.collect(toList());
 		Statistician statistician = new Statistician();
 		StatisticsRepository repository = new StatisticsRepository();
@@ -47,10 +49,16 @@ public class Main {
 		return new Monitor(observers, statistician, repository, initialStatistics);
 	}
 
-	private static ServiceObserver createAlphaObserver(String serviceName) {
+	private static Optional<ServiceObserver> createAlphaObserver(String serviceName) {
 		return AlphaServiceObserver.createIfAlphaService(serviceName)
-				.orElseThrow(() -> new IllegalArgumentException(
-						"No alpha observer: " + serviceName));
+				.or(printfIfEmpty("No observer for %s found.%n", serviceName));
+	}
+
+	private static <T> Supplier<Optional<T>> printfIfEmpty(String message, String... args) {
+		return () -> {
+			System.out.printf(message, (Object[]) args);
+			return Optional.empty();
+		};
 	}
 
 }

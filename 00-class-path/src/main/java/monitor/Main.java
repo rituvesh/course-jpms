@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -52,10 +53,14 @@ public class Main {
 	private static Optional<ServiceObserver> createObserver(String serviceName) {
 		return AlphaServiceObserver.createIfAlphaService(serviceName)
 				.or(() -> BetaServiceObserver.createIfBetaService(serviceName))
-				.or(() -> {
-					System.out.printf("No observer for %s found.%n", serviceName);
-					return Optional.empty();
-				});
+				.or(printfIfEmpty("No observer for %s found.%n", serviceName));
+	}
+
+	private static <T> Supplier<Optional<T>> printfIfEmpty(String message, String... args) {
+		return () -> {
+			System.out.printf(message, (Object[]) args);
+			return Optional.empty();
+		};
 	}
 
 }
