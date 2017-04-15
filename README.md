@@ -10,12 +10,14 @@ This course teaches you the ins and outs of Java 9's new module system.
 * [section 01](01-single-module): create a single module from an existing application
 * [section 02](02-multiple-modules): split the application into multiple modules
 
+### Advanced
+
+* [section 03](03-implied-readability): use implied readability
 
 ## Content Ideas
 
 ### Advanced
 
-* use implied readability
 * use qualified exports
 * use optional dependencies
 * use services
