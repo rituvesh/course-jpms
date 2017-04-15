@@ -7,20 +7,20 @@ Section goals:
 
 ## Steps
 
-### Creating A Module
+### Create A Module
 
 Since the project is currently a monolith, the first step is to turn it into a single module.
 To do this you need to **create a valid module declaration**.
 
 Info: The Spark module is called `spark.core`.
 
-### Compiling A Module
+### Build A Module
 
 **Create a script `build.sh` that compiles the code as a module and packages it as a module JAR.**
 For that the module declaration must be added to the list of files to compile.
 Furthermore, because of the dependency on Spark, the corresponding module must be on the module path instead of the class path.
 
-### Launching The Application
+### Launch The Application
 
 **Create a script `run.sh` that runs the application.**
 

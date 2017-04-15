@@ -12,21 +12,21 @@ Section goals:
 
 The project was split into a few subprojects - have a look at those and get a feeling for their relationships.
 
-### Creating Modules
+### Create Modules
 
 Turn each subproject into a module as in the previous step.
 Note that this requires you to add module dependencies between the subprojects and to export packages.
 
-### Compiling Modules
+### Build Modules
 
 **Create a script `build.sh` that compiles and packages all modules.**
 Maybe start by doing the same as in the previous step for each module but instead of going down that cumbersome road, create a multi-module build with the `javac` arguments `--module-source-path` and `--module`
 
-### Launching The Application
+### Launch The Application
 
 **Create a script `run.sh` that runs the application.**
 
-### Breaking The Application
+### Break The Application
 
 In case you didn't get any errors while creating the modules in the first place, **leave out some dependencies and exports** to see how the module system reacts _at compile time_.
 

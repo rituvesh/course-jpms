@@ -8,7 +8,7 @@ Section goals:
 
 ## Steps
 
-### Install Java 9:
+### Install Java 9
 
 * download [JDK 9 EA with Jigsaw](TODO)
 * unpack into a folder with build number, e.g. `jdk-9-b164`
