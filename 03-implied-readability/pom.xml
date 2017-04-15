@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>monitor</module>
+		<module>monitor.observation</module>
 		<module>monitor.observer</module>
 		<module>monitor.observer.alpha</module>
 		<module>monitor.observer.beta</module>

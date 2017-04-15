@@ -14,6 +14,7 @@ echo " > multi-compiling modules"
 $JAVAC --module-path libs --module-source-path "./*/src/main/java" -d classes --module monitor
 
 echo " > packaging modules"
+$JAR --create --file mods/monitor.observation.jar -C classes/monitor.observation .
 $JAR --create --file mods/monitor.observer.jar -C classes/monitor.observer .
 $JAR --create --file mods/monitor.observer.alpha.jar -C classes/monitor.observer.alpha .
 # $JAR --create --file mods/monitor.observer.beta.jar -C classes/monitor.observer.beta .
