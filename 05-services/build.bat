@@ -12,7 +12,7 @@ rmdir /s /q mods
 mkdir mods
 
 echo " > multi-compiling modules"
-%JAVAC% --module-path libs --module-source-path ".\*\src\main\java" -d classes --module monitor
+%JAVAC% --module-path libs --module-source-path ".\*\src\main\java" -d classes --module monitor --add-modules monitor.observer.alpha,monitor.observer.beta
 
 echo " > packaging modules"
 %JAR% --create --file mods\monitor.observer.jar -C classes\monitor.observer .

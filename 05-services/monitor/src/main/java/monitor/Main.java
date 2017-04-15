@@ -1,18 +1,21 @@
 package monitor;
 
 import monitor.observer.ServiceObserver;
-import monitor.observer.alpha.AlphaServiceObserver;
-import monitor.observer.beta.BetaServiceObserver;
+import monitor.observer.ServiceObserverFactory;
 import monitor.persistence.StatisticsRepository;
 import monitor.rest.MonitorServer;
 import monitor.statistics.Statistician;
 import monitor.statistics.Statistics;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ServiceLoader;
+import java.util.ServiceLoader.Provider;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -39,8 +42,9 @@ public class Main {
 	}
 
 	private static Monitor createMonitor() {
+		Function<String, Optional<ServiceObserver>> observeService = createServiceObserverFactory();
 		List<ServiceObserver> observers = Stream.of("alpha-1", "alpha-2", "alpha-3", "beta-1")
-				.map(Main::createObserver)
+				.map(observeService)
 				.flatMap(Optional::stream)
 				.collect(toList());
 		Statistician statistician = new Statistician();
@@ -50,9 +54,15 @@ public class Main {
 		return new Monitor(observers, statistician, repository, initialStatistics);
 	}
 
-	private static Optional<ServiceObserver> createObserver(String serviceName) {
-		return AlphaServiceObserver.createIfAlphaService(serviceName)
-				.or(() -> BetaServiceObserver.createIfBetaService(serviceName))
+	private static Function<String, Optional<ServiceObserver>> createServiceObserverFactory() {
+		List<ServiceObserverFactory> factories = ServiceLoader
+				.load(ServiceObserverFactory.class).stream()
+				.map(Provider::get)
+				.collect(toList());
+		return serviceName -> factories.stream()
+				.map(factory -> factory.createIfMatchingService(serviceName))
+				.flatMap(Optional::stream)
+				.findFirst()
 				.or(printfIfEmpty("No observer for %s found.%n", serviceName));
 	}
 
