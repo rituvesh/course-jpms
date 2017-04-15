@@ -13,13 +13,13 @@ This course teaches you the ins and outs of Java 9's new module system.
 ### Advanced
 
 * [section 03](03-implied-readability): use implied readability
+* [section 04](04-optional-dependencies): use optional dependencies
 
 ## Content Ideas
 
 ### Advanced
 
 * use qualified exports
-* use optional dependencies
 * use services
 * module versions
 
