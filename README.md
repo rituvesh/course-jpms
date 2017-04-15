@@ -2,12 +2,17 @@
 
 This course teaches you the ins and outs of Java 9's new module system.
 
+## Content
+
+### Basics
+
+* [section 00](00-class-path): install Java 9 and run existing application on class path
+
+
 ## Content Ideas
 
 ### Basics
 
-* install Java 9
-* run existing application on class path
 * create a single module from an existing application
 * split the application into multiple modules
 
