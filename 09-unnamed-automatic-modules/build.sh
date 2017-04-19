@@ -15,6 +15,10 @@ $JAVAC --module-path libs --module-source-path "./*/src/main/java" -d classes --
 
 echo " > packaging modules"
 # an easy way to create non-modular JARs is to delete the module descriptor before packaging the .class files
+rm classes/monitor.statistics/module-info.class
+rm classes/monitor.persistence/module-info.class
+rm classes/monitor.rest/module-info.class
+
 $JAR --create --file mods/monitor.observer.jar -C classes/monitor.observer .
 $JAR --create --file mods/monitor.observer.alpha.jar -C classes/monitor.observer.alpha .
 $JAR --create --file mods/monitor.observer.beta.jar -C classes/monitor.observer.beta .

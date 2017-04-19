@@ -16,6 +16,10 @@ echo " > multi-compiling modules"
 
 echo " > packaging modules"
 rem an easy way to create non-modular JARs is to delete the module descriptor before packaging the .class files
+del classes\monitor.statistics\module-info.class
+del classes\monitor.persistence\module-info.class
+del classes\monitor.rest\module-info.class
+
 %JAR% --create --file mods\monitor.observer.jar -C classes\monitor.observer .
 %JAR% --create --file mods\monitor.observer.alpha.jar -C classes\monitor.observer.alpha .
 %JAR% --create --file mods\monitor.observer.beta.jar -C classes\monitor.observer.beta .
