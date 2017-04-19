@@ -11,7 +11,11 @@ rm -rf mods
 mkdir mods
 
 echo " > multi-compiling modules"
-$JAVAC --module-path libs --module-source-path "./*/src/main/java" -d classes --module monitor
+$JAVAC --module-path libs --module-source-path "./*/src/main/java" -d classes --module monitor \
+	--add-modules monitor.observer.alpha,monitor.observer.beta \
+	--add-modules monitor.rest \
+	--add-reads monitor=monitor.rest \
+	--add-exports monitor.rest/monitor.rest=monitor
 
 echo " > packaging modules"
 $JAR --create --file mods/hibernate.jar -C classes/hibernate .
