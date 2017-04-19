@@ -19,6 +19,10 @@ This course teaches you the ins and outs of Java 9's new module system.
 * [section 07](07-open-packages-modules): open packages and modules
 * [section 08](08-command-line-arguments): use command line arguments
 
+### Migration
+
+* [section 09](08-command-line-arguments): explore unnamed and automatic modules
+
 ## Content Ideas
 
 ### Advanced
@@ -27,6 +31,6 @@ This course teaches you the ins and outs of Java 9's new module system.
 
 ### Migration
 
-* learn about unnamed and automatic modules
 * use jdeps to analyze dependencies
+* use kill switch
 * avoid split packages (maybe patch)
