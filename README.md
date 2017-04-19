@@ -17,6 +17,7 @@ This course teaches you the ins and outs of Java 9's new module system.
 * [section 05](05-services): use services
 * [section 06](06-qualified-exports): use qualified exports
 * [section 07](07-open-packages-modules): open packages and modules
+* [section 08](07-open-packages-modules): use command line arguments
 
 ## Content Ideas
 

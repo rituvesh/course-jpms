@@ -1,0 +1,3 @@
+module hibernate {
+	exports hibernate;
+}
