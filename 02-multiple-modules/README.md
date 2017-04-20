@@ -22,6 +22,13 @@ Note that this requires you to add module dependencies between the subprojects a
 **Create a script `build.sh` that compiles and packages all modules.**
 Maybe start by doing the same as in the previous step for each module but instead of going down that cumbersome road, create a multi-module build with the `javac` arguments `--module-source-path` and `--module`
 
+_Info_: To compile multiple modules at once, the module system needs to know where to find the sources for individual modules.
+This can be specified with a generalized version of the path to the sources, where the module name is replaced by a star (`*`):
+
+`--module-source-path './*/src/main/java'`
+
+(The leading `./` is required because otherwise the module system does not accept the star.)
+
 ### Launch The Application
 
 **Create a script `run.sh` that runs the application.**
