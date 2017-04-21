@@ -33,5 +33,5 @@ Observe how easy it is to manage services by **adding them to or removing them f
 ## Observations
 
 * the detour via factory class with no-args-constructor is common
-* consuming module no longer mentions service implementations ~> new implementations can come and go
+* consuming module no longer mentions service implementations ⇝ new implementations can come and go
 * services that are found on the module path are included by default (unlike optional dependencies)
