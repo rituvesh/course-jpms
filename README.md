@@ -21,7 +21,13 @@ This course teaches you the ins and outs of Java 9's new module system.
 
 ### Migration
 
-* [section 09](08-command-line-arguments): explore unnamed and automatic modules
+* [section 09](09-unnamed-automatic-modules): explore unnamed and automatic modules
+* [section 10](10-jdeps): analyze dependencies with `jdeps`
+
+### Misc
+
+* [section 11](11-jlink): create runtime images with `jlink`
+
 
 ## Content Ideas
 
@@ -31,6 +37,5 @@ This course teaches you the ins and outs of Java 9's new module system.
 
 ### Migration
 
-* use jdeps to analyze dependencies
 * use kill switch
 * avoid split packages (maybe patch)
