@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.ServiceLoader;
+import java.util.ServiceLoader.Provider;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -54,8 +55,10 @@ public class Main {
 	}
 
 	private static Function<String, Optional<ServiceObserver>> createServiceObserverFactory() {
-		List<ServiceObserverFactory> factories = new ArrayList<>();
-		ServiceLoader.load(ServiceObserverFactory.class).forEach(factories::add);
+		List<ServiceObserverFactory> factories = ServiceLoader
+				.load(ServiceObserverFactory.class).stream()
+				.map(Provider::get)
+				.collect(toList());
 		return serviceName -> factories.stream()
 				.map(factory -> factory.createIfMatchingService(serviceName))
 				.flatMap(Optional::stream)
