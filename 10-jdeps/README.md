@@ -6,7 +6,7 @@ Section goals:
 * using `jdeps` to look for JDK-internal APIs
 
 
-## Steps
+## Tasks
 
 ### Dependencies
 

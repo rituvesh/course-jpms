@@ -7,7 +7,7 @@ Section goals:
 * using automatic modules for stepwise modularization
 
 
-## Steps
+## Tasks
 
 ### Time For Honesty
 

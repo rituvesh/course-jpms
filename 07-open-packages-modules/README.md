@@ -5,7 +5,7 @@ Section goals:
 * open code to reflection without exporting
 
 
-## Steps
+## Tasks
 
 ### Analyze The Situation
 

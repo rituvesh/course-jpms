@@ -5,7 +5,7 @@ Section goals:
 * use command line arguments to edit module graph
 
 
-## Steps
+## Tasks
 
 ### Compile And Launch
 

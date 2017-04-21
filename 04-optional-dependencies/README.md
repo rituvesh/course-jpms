@@ -7,7 +7,7 @@ Section goals:
 * using command line flags to add optional dependencies
 
 
-## Steps
+## Tasks
 
 ### Make Dependency On Observer Implementations Optional
 

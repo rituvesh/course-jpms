@@ -5,7 +5,7 @@ Section goals:
 * using jlink to create small Java runtime images
 * using jlink to create application runtime images
 
-## Steps
+## Tasks
 
 ### Create A Minimal Runtime
 

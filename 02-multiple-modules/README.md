@@ -6,7 +6,7 @@ Section goals:
 * understanding how the module system enforces reliable configuration and strong encapsulation
 
 
-## Steps
+## Tasks
 
 ### Browse The Project
 

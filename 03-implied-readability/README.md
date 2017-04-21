@@ -6,7 +6,7 @@ Section goals:
 * creating an aggregator module
 
 
-## Steps
+## Tasks
 
 ### Make Observer Implementations Stand On Their Own
 

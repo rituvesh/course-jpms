@@ -6,7 +6,7 @@ Section goals:
 * getting used to the code base
 * observing that a module-free application works just the same as before Java 9
 
-## Steps
+## Tasks
 
 ### Install Java 9
 

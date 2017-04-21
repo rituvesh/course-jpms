@@ -8,7 +8,7 @@ Section goals:
 * managing services by adding removing from module path
 
 
-## Steps
+## Tasks
 
 ### Prepare Modules For Services
 

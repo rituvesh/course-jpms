@@ -5,7 +5,7 @@ Section goals:
 * creating, compiling, and launching the first module
 * getting used to new command line arguments
 
-## Steps
+## Tasks
 
 ### Create A Module
 
