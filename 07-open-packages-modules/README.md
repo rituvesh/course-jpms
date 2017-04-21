@@ -21,10 +21,12 @@ Finally, **run the application** and observe the result.
 
 **Open the package in question** to allow reflection to access it.
 
+Note that an open package not only allows reflective access to public parts of the API (like `StatisticsEntity`) but also to non-public sections (like the private field `id`).
+This differs from exports, which only give access to public types and members.
+
 ### Open The Module
 
 **Open the entire module** to allow reflection to access it.
-
 
 ## Observations
 
