@@ -10,15 +10,15 @@ Section goals:
 
 ### Install Java 9
 
-* download [JDK 9 EA with Jigsaw](TODO)
+* download [JDK 9 EA with Jigsaw](http://jdk.java.net/jigsaw/)
 * unpack into a folder with build number, e.g. `jdk-9-b164`
 * symlink `jdk-9` to that folder (makes it easy to update)
 * symlink `javac9`, `jar9`, `java9`, and `jdeps9` to respective command in `jdk-9/bin/`
 
 Refresher on symlinks:
 
-* [on Linux](TODO):
-* [on Windows](TODO)
+* [on Linux](http://stackoverflow.com/a/1951752/2525313):
+* [on Windows](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
 
 Now `java9 --version` should output something like:
 
