@@ -6,12 +6,17 @@ Section goals:
 * getting used to the code base
 * observing that a module-free application works just the same as before Java 9
 
+
 ## Tasks
 
 ### Install Java 9
 
-* download [JDK 9 EA with Jigsaw](http://jdk.java.net/jigsaw/)
-* unpack into a folder with build number, e.g. `jdk-9-b164`
+First, download and unpack [JDK 9](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html).
+
+#### To Build From Command Line
+
+If you want to build with the command line scripts:
+
 * symlink `jdk-9` to that folder (makes it easy to update)
 * symlink `javac9`, `jar9`, `java9`, and `jdeps9` to respective command in `jdk-9/bin/`
 
@@ -23,10 +28,12 @@ Refresher on symlinks:
 Now `java9 --version` should output something like:
 
 ```
-java 9-ea
-Java(TM) SE Runtime Environment (build 9-ea+164-jigsaw-nightly-...)
-Java HotSpot(TM) 64-Bit Server VM (build 9-ea+164-jigsaw-nightly-..., mixed mode)
+java 9.0.1
+Java(TM) SE Runtime Environment (build 9.0.1+11)
+Java HotSpot(TM) 64-Bit Server VM (build 9.0.1+11, mixed mode)
 ```
+
+Whenever Java commands are mentioned in this course, they always refer to the binaries from version 9, even though they don't end in `9`.
 
 ### Browse The Project
 
@@ -37,6 +44,8 @@ You can import the project into your favorite IDE if you want (it has to be Java
 Have a look at the code.
 
 ### Compile And Run
+
+#### Command Line
 
 Have a look at `build.sh` and `run.sh`.
 Aside from the new long-form and GNU-style arguments, this is standard Java stuff.

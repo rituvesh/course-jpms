@@ -27,7 +27,7 @@ This can be specified with a generalized version of the path to the sources, whe
 
 `--module-source-path './*/src/main/java'`
 
-(The leading `./` is required because otherwise the module system does not accept the star.)
+(The leading `./` is required because otherwise the module system does not accept the asterisk.)
 
 ### Launch The Application
 

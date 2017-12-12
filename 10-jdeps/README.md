@@ -11,8 +11,8 @@ Section goals:
 ### Dependencies
 
 **Experiment with `jdeps`** to list dependencies of the monitor application.
-Start with `jdeps9 --module-path mods:libs --module monitor` and take it from there.
-Look into the options `-recursive`, `-summary` and those to filter dependencies
+Start with `jdeps --module-path mods:libs --module monitor` and take it from there.
+Look into the options `-recursive`, `-summary` and the options to filter dependencies.
 
 ### Internal APIs
 
