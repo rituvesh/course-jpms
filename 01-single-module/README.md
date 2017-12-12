@@ -21,12 +21,19 @@ Info: The Spark module is called `spark.core`.
 For that the module declaration must be added to the list of files to compile.
 Furthermore, because of the dependency on Spark, the corresponding module must be on the module path instead of the class path.
 
+For building with Maven, run `mvn clean compile -X` and **have a look at the last debug block**.
+When you think everything works as expected use `jar --describe-module --file target/main-1.0-SNAPSHOT.jar` to take a look
+
 ### Launch The Application
 
 **Create a script `run.sh` that runs the application.**
+
+To execute with Maven, have a look at the `exec-maven-plugin` configuration and try to **adapt it to use the module path and set an initial module**.
+Use `mvn exec:exec -X` to debug and verify your configuration.
 
 
 ## Observations
 
 * the module path has first-level support for folders
 * look into `jar --main-class` and how that changes the launch command
+* the `maven-compiler-plugin` simply "does the right thing"

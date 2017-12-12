@@ -15,7 +15,7 @@ Have a look at the image size.
 ### Create A Monitor Image
 
 **Try to build an image of the Monitor application** and see it fail due to the dependency on automatic modules.
-**Remove automatic modules** by deleting the corresponding features, then build and run an image.
+**Remove automatic modules** by deleting the corresponding features (also from the Maven POM), then build and run an image.
 **Use the `jlink` option `--launcher`.**
 
 Have a look at the image size.

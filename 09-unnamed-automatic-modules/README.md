@@ -24,6 +24,10 @@ java --module-path mods:libs
 
 Examine the modules we created so far as well as _spark.core_ or others in `lib`.
 
+Note that Maven automatically did the right thing.
+After building the entire project, go into `monitor`, run `mvn clean compile -X`, and have a look at the last block of debug messages.
+You will see how the class and module path are composed.
+
 ### Run Application In Unnamed Module
 
 Section _00 Class Path_ showed how the unmodularized application could be launched from a single JAR on the class path.
@@ -38,11 +42,14 @@ To observe "the chaos of the class path" inside the unnamed module **do the foll
 * see the launch fail if used on the module path
 * see the application run on the class path
 
+To solve this with Maven, take a look back at task _02 Multiple Modules_, where the exec plugin was configured to run from the module path instead of the class path.
+
 ### Create Automatic Modules
 
 **Turn some suprojects into automatic modules** by packaging them without the module declaration (⇝ no longer a modular JAR) and still putting them on the module path.
 
 Use the possibility to **properly separate JARs on module and class path**.
+(Maven does this on its own.)
 
 
 ## Observations
@@ -50,3 +57,4 @@ Use the possibility to **properly separate JARs on module and class path**.
 * the class path merges everything into one unnamed module
 * the module path turns everything unto a module
 * automatic modules are the bridge from modules to the class path
+* Maven places exactly the artifacts required by the module declaration onto the module path and the rest onto the class path, regardless of whether they are modular or plain JARs

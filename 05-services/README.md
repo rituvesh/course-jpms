@@ -25,10 +25,16 @@ Using services requires two steps:
 
 **Implement these steps with the observer implementation modules**, using the factories as services.
 
+When removing the dependency of _monitor_ on the observer implementations, remember to also do it on the POM.
+
 ### Experiment With Module Path
 
 Observe how easy it is to manage services by **adding them to or removing them from the module path**.
 
+**Maven:**
+I found no way to add the observer implementations to the module path that `mvn exec:exec` uses.
+Without that this task can not be solved with Maven.
+(You could mark the dependency with scope `runtime`, but that defeats the purpose of decoupling service consumer and provider.)
 
 ## Observations
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>monitor</groupId>
+	<artifactId>parent</artifactId>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>monitor</groupId>
+		<artifactId>grandparent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<modules>
+		<module>hibernate</module>
+		<module>monitor</module>
+		<module>monitor.observer</module>
+		<module>monitor.observer.alpha</module>
+		<module>monitor.observer.beta</module>
+		<module>monitor.persistence</module>
+		<module>monitor.rest</module>
+		<module>monitor.statistics</module>
+	</modules>
+
+</project>

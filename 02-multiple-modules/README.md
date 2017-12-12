@@ -29,9 +29,17 @@ This can be specified with a generalized version of the path to the sources, whe
 
 (The leading `./` is required because otherwise the module system does not accept the asterisk.)
 
+As in _01 Single Module_, Maven simply does the right thing.
+Additionally, the build is configured to copy all modules it builds into the `mods` folder.
+You can check with `jar --describe-module` to see their descriptors.
+
 ### Launch The Application
 
 **Create a script `run.sh` that runs the application.**
+
+Somewhat inconveniently, `mvn exec:exec` now needs to be executed in the `monitor` directory.
+Have a look at the `exec-maven-plugin` configuration in and **adapt it to use the module path and set an initial module** as in _01 Single Module_.
+If you can't get it to work, you can remove the entire plugin configuration - the project will inherit the correct configuration from a parent POM.
 
 ### Break The Application
 
