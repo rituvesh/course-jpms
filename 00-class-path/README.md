@@ -15,25 +15,10 @@ First, download and unpack [JDK 9](http://www.oracle.com/technetwork/java/javase
 
 #### To Build From Command Line
 
-If you want to build with the command line scripts:
+Whenever Java commands are mentioned in this course, they always refer to the binaries from version 9.
+If you want to build with the command line scripts, edit `executables.sh` in the project's root directory (i.e. the one above this one) to point to the Java 9 executables.
 
-* symlink `jdk-9` to that folder (makes it easy to update)
-* symlink `javac9`, `jar9`, `java9`, and `jdeps9` to respective command in `jdk-9/bin/`
-
-Refresher on symlinks:
-
-* [on Linux](http://stackoverflow.com/a/1951752/2525313):
-* [on Windows](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
-
-Now `java9 --version` should output something like:
-
-```
-java 9.0.1
-Java(TM) SE Runtime Environment (build 9.0.1+11)
-Java HotSpot(TM) 64-Bit Server VM (build 9.0.1+11, mixed mode)
-```
-
-Whenever Java commands are mentioned in this course, they always refer to the binaries from version 9, even though they don't end in `9`.
+These are all Linux scripts, but adapting them to Windows is straightforward.
 
 #### To Build With Maven
 
@@ -47,8 +32,8 @@ JAVA_HOME=${path-to-jdk-9}
 Now the output of `mvn -v` should say it runs on Java 9:
 
 ```
-Java version: 9.0.1, vendor: Oracle Corporation
-Java home: /opt/jdk-9.0.1
+Java version: 9.0.4, vendor: Oracle Corporation
+Java home: /opt/jdk-9.0.4
 ```
 
 To execute the project with `mvn exec:exec` you need to set the path to your JDK 9 install in the the POM in the project's root directory (i.e. the one above this one) and then build it once with `mvn clean install`.

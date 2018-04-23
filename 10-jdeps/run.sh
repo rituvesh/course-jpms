@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+source ../executables.sh
 
 echo ""
 echo "--- LAUNCH ---"
@@ -6,4 +8,4 @@ echo "--- LAUNCH ---"
 echo " > run monitor"
 echo ""
 
-java9 --module-path libs:mods --module monitor
+$JAVA --module-path libs:mods --module monitor
