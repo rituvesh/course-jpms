@@ -3,7 +3,6 @@ package monitor;
 import monitor.observer.ServiceObserver;
 import monitor.observer.ServiceObserverFactory;
 import monitor.persistence.StatisticsRepository;
-import monitor.rest.MonitorServer;
 import monitor.statistics.Statistician;
 import monitor.statistics.Statistics;
 
@@ -27,16 +26,10 @@ public class Main {
 		System.out.printf("Launching Monitor on Java %s.%n%n", Runtime.version().toString());
 
 		Monitor monitor = createMonitor();
-		MonitorServer server = MonitorServer
-				.create(monitor::currentStatistics)
-				.start();
 
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 		scheduler.scheduleAtFixedRate(monitor::updateStatistics, 1, 1, TimeUnit.SECONDS);
-		scheduler.schedule(() -> {
-					scheduler.shutdown();
-					server.shutdown();
-				},
+		scheduler.schedule(() -> scheduler.shutdown(),
 				10,
 				TimeUnit.SECONDS);
 	}
