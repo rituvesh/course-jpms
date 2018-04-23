@@ -2,20 +2,20 @@
 
 Section goals:
 
-* setting up Java 9
+* setting up Java 9 (or later)
 * getting used to the code base
 * observing that a module-free application works just the same as before Java 9
 
 
 ## Tasks
 
-### Install Java 9
+### Install Recent Java
 
-First, download and unpack [JDK 9](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html).
+First, download and install [JDK 9](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html).
+Later versions will also work, but for the sake of simplicity, this course only talks about Java 9.
 
 #### To Build From Command Line
 
-Whenever Java commands are mentioned in this course, they always refer to the binaries from version 9.
 If you want to build with the command line scripts, edit `executables.sh` in the project's root directory (i.e. the one above this one) to point to the Java 9 executables.
 
 These are all Linux scripts, but adapting them to Windows is straightforward.
