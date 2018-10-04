@@ -50,7 +50,7 @@
 	<build>
 		<plugins>
 			<!-- execute the resulting project
-				(ovserwrite parent setting to use class path, not module path) -->
+				(overwrite parent setting to use class path, not module path) -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -62,7 +62,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<executable>${java9.executable}</executable>
+					<executable>${java.executable}</executable>
 					<workingDirectory>.</workingDirectory>
 					<arguments>
 						<argument>--class-path</argument><classpath/>

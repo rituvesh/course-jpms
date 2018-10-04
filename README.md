@@ -1,12 +1,12 @@
 # Java Platform Module System Course
 
-This course teaches you the ins and outs of Java 9's new module system.
+This course teaches you the ins and outs of the Java Platform Module System (JPMS) introduced in Java 9.
 
 ## Content
 
 ### Basics
 
-* [section 00](00-class-path): install Java 9 and run existing application on class path
+* [section 00](00-class-path): install recent JDK version and run existing application on class path
 * [section 01](01-single-module): create a single module from an existing application
 * [section 02](02-multiple-modules): split the application into multiple modules
 
@@ -27,15 +27,3 @@ This course teaches you the ins and outs of Java 9's new module system.
 ### Misc
 
 * [section 11](11-jlink): create runtime images with `jlink`
-
-
-## Content Ideas
-
-### Advanced
-
-* module versions
-
-### Migration
-
-* use kill switch
-* avoid split packages (maybe patch)

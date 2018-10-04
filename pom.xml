@@ -10,7 +10,7 @@
 		#####################
 
 		When you're editing this file, you're doing it wrong!
-		The only exception is setting `java9.executable`
+		The only exception is setting `java.executable`
 -->
 
 	<groupId>monitor</groupId>
@@ -20,9 +20,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>9</maven.compiler.source>
-		<maven.compiler.target>9</maven.compiler.target>
-		<java9.executable>java9</java9.executable>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<java.executable>java</java.executable>
 	</properties>
 
 	<dependencyManagement>
@@ -40,22 +40,22 @@
 			<plugins>
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.1.0</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.7.0</version>
+					<version>3.8.0</version>
 					<configuration>
 						<fork>true</fork>
 					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.0.2</version>
+					<version>3.1.0</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.0.2</version>
+					<version>3.1.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -156,7 +156,7 @@
 							</execution>
 						</executions>
 						<configuration>
-							<executable>${java9.executable}</executable>
+							<executable>${java.executable}</executable>
 							<workingDirectory>.</workingDirectory>
 							<longModulepath>false</longModulepath>
 							<arguments>
