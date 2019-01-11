@@ -15,14 +15,16 @@ First, download and unpack/install the most recent [OpenJDK](http://jdk.java.net
 
 #### To Build From Command Line
 
-If you want to build with the command line scripts, but Java 11+ is not your default install, edit `executables.sh` in the project's root directory (i.e. the one above this one) to point to the correct executables.
-
+You can build from the command line by executing the scripts `run.sh` and `build.sh` next to this README.
 These are all Linux scripts, but adapting them to Windows is straightforward.
+If you want to use the scripts, but Java 11+ is not your default install, edit `executables.sh` in the project's root directory (i.e. the one above this one) to point to the correct executables.
+
+If you need to write scripts in future sections (or a Windows script for this one), check out [this cheat sheet](https://blog.codefx.org/cheat-sheet-build-run-modules-jars.html) for `javac`, `jar`, and `java`.
 
 #### To Build With Maven
 
 If you want to build with Maven, install version 3.5.0+.
-Java 11+ is not your default install, create a file `.mavenrc` in your home directory and set `JAVA_HOME` to your JDK 11+ install:
+If Java 11+ is not your default install, create a file `.mavenrc` in your home directory and set `JAVA_HOME` to your JDK 11+ install:
 
 ```
 JAVA_HOME=${path-to-jdk-11}
@@ -31,7 +33,7 @@ JAVA_HOME=${path-to-jdk-11}
 Now the output of `mvn -v` should say it runs on Java 11:
 
 ```
-Java version: 11, vendor: Oracle Corporation
+Java version: 11.0.1
 ```
 
 To execute the project with `mvn exec:exec` you need to set the path to your JDK 11+ install in the the POM in the project's root directory (i.e. the one above this one) and then build it once with `mvn clean install`.
@@ -46,6 +48,9 @@ The _Monitor_ application observes a bunch of (micro?) services and collects liv
 It aggregates the data into statistics that are persisted and made available via REST.
 
 You can import the project into your favorite IDE if you want (it has to be Java 11 compatible and you have to point towards `jdk-11` or you will see compile errors) but a text editor is fine as well.
+Each section has its own project and they should all be imported individually.
+While that is a little cumbersome, it's much more stable than importing the project from the root directory.
+
 Have a look at the code.
 
 ### Compile And Run
