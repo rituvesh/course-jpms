@@ -8,5 +8,4 @@ echo "--- LAUNCH ---"
 echo " > run monitor"
 echo ""
 
-$JAVA --module-path libs:mods \
-	--module monitor
+$JAVA --module-path libs:mods --module monitor

@@ -2,6 +2,10 @@
 set -e
 source ../executables.sh
 
-echo "--- LAUNCHING ---"
+echo ""
+echo "--- LAUNCH ---"
+
+echo " > run monitor"
+echo ""
 
 $JAVA --class-path 'libs/*':'jars/*' monitor.Main
