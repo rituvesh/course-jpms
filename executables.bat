@@ -1,4 +1,4 @@
-rem Java executables for standard Linux environment
+rem Java executables
 set JAVAC="C:\Program Files\Java\jdk-11.0.2\bin\javac"
 set JAR="C:\Program Files\Java\jdk-11.0.2\bin\jar"
 set JAVA="C:\Program Files\Java\jdk-11.0.2\bin\java"

@@ -22,7 +22,7 @@ Apply it if you want.
 
 ### Add Modules On Launch
 
-Experiment with the launch command and **add one or both observer implementations at launch time**.
+Experiment with the launch command and **add one or both observer implementations at launch time** with the `java` command line option `--add-modules ${module-name}`.
 
 **Maven:**
 If Maven was made aware that the observer implementations are optional at run time, the module path created for `mvn exec:exec` will not include them.

@@ -17,6 +17,15 @@ The project was split into a few subprojects - have a look at those and get a fe
 Turn each subproject into a module as in the previous step.
 Note that this requires you to add module dependencies between the subprojects and to export packages.
 
+There are various ways to figure out dependencies between projects.
+One of them is to ask Maven:
+
+```
+mvn compile dependency:resolve -DexcludeTransitive
+```
+
+Have a look at the output of Maven's dependency plugin.
+
 ### Build Modules
 
 **Create a script `build.sh` that compiles and packages all modules.**
