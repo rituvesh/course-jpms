@@ -45,6 +45,14 @@ You can check with `jar --describe-module` to see their descriptors.
 ### Launch The Application
 
 **Create a script `run.sh` that runs the application.**
+When you think everything works as expected, add the option `--show-module-resolution` to the `java` command and take a look at the output.
+It should start with these lines:
+
+```
+root monitor file:///path/to/monitor.jar
+monitor requires ...
+...
+```
 
 Somewhat inconveniently, `mvn exec:exec` now needs to be executed in the `monitor` directory.
 Have a look at the `exec-maven-plugin` configuration in and **adapt it to use the module path and set an initial module** as in _01 Single Module_.

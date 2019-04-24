@@ -22,7 +22,16 @@ For that the module declaration must be added to the list of files to compile.
 Furthermore, because of the dependency on Spark, the corresponding module must be on the module path instead of the class path.
 
 For building with Maven, run `mvn clean compile -X` and **have a look at the last debug block**.
-When you think everything works as expected use `jar --describe-module --file target/main-1.0-SNAPSHOT.jar` to take a look
+
+When you think everything works as expected, use `jar --describe-module --file ${path-to-new-jar}` to take a look at the output.
+It should start with these lines:
+
+```
+monitor jar:file:///path/to/monitor.jar/!module-info.class
+requires java.base mandated
+requires spark.core
+...
+```
 
 ### Launch The Application
 
